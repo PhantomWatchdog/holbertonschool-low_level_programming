@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*Display text with puts function*/
+/* Display text with puts function */
 
 int main(void)
 
