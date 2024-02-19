@@ -739,6 +739,6 @@ extern int __overflow (FILE *, int);
 # 2 "main.c"
 int main() {
 
- printf("Hello, World!")
+ printf("Hello, World!");
  return 0;
 }
