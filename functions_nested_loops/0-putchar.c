@@ -1,5 +1,4 @@
-#include "main.h"
-#include <stdio.h>
+#include <main.h>
 
 /**
  * main - prints the _putchar term
@@ -8,15 +7,15 @@
 
 int main(void)
 {
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
-
+	int main(char c)
+	{
+		_putchar('_');
+		_putchar('p');
+		_putchar('u');
+		_putchar('t');
+		
+		return (fwrite(1, &c, 1));
+	}
+	
 	return (0);
 }
