@@ -19,7 +19,7 @@ void print_alphabet_x10(void)
 	{
 		c = 'a';
 
-		while (c <= 'k')
+		while (c <= 'z')
 		{
 			_putchar(c);
 			c++;
