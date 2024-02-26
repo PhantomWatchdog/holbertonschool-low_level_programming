@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * more_numbers - print 10 times numbers from 0 to 14,
- * @i: is the part who contain digits from 0 to 9,
- * @j: contain digits from 10 to 14,
+ * more_numbers - print 10 times numbers from 0 to 14 .
+ * i: is the part who contain digits from 0 to 9,
+ * j: contain digits from 10 to 14,
  * note: with '()' on if statement, the result is different !
  * Return: zero.
 */
@@ -20,7 +20,7 @@ void more_numbers(void)
 			_putchar(j / 10 + '0');
 			_putchar(j % 10 + '0');
 		}
-		
+
 		_putchar('\n');
-	}	
+	}
 }
