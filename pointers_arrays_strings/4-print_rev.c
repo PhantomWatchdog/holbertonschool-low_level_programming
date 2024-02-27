@@ -2,6 +2,7 @@
 
 /**
  * print_rev - print a char* with rev order,
+ * @s: parameter containing the char*,
  * i: array incrementation until last value for char count,
  * followed by decrementation until first char,
  * _putchar display the result,
