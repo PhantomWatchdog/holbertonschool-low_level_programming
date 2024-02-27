@@ -4,7 +4,7 @@
 /**
  * _strlen - char* length results of the function,
  * @s: is the parameter pointer receiving char*,
- * @ptr: contain the s value;
+ * ptr: contain the s value;
  * Return: .
  */
 
