@@ -2,6 +2,7 @@
 
 /**
  * rev_string - function used for swap value of s,
+ * @s: contain the char*,
  * start: first var used for the swap ,
  * end: second var used for the swap,
  * first loop move pointer until last char of *s \0,
@@ -15,13 +16,14 @@ void rev_string(char *s)
 {
 	char *start = s;
 	char *end = s;
-	
-	while (*end != '\0') {
+
+	while (*end != '\0')
+	{
 		end++;
 	}
-	
+
 	end--;
-	
+
 	while (start < end)
 	{
 		char temp = *start;
