@@ -3,6 +3,9 @@
 
 /**
  * print_array - print the string who's contained in array,
+ * @a: pointing to a value (string in an array),
+ * @n: contain the parameter deciding how many elements,
+ * will be displayed,
  * index: is more understandable for describing the pointer moves,
  * Return: zero.
  */
