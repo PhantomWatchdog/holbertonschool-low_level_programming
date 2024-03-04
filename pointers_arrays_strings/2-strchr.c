@@ -9,11 +9,12 @@
 
 char *_strchr(char *s, char c)
 {
-/* increment */ 
+
+/* increment string until finding c */
 	while (*s != '\0' && *s != c)
 	{
 		s++;
 	}
-
+/* return s if c is find or c is NULL, else return NULL */
 	return ((*s == c || c == '\0') ? s : '\0');
 }
