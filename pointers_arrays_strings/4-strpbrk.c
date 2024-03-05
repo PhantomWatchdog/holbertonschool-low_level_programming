@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strbrk - search the first occurence in a string,
+ * _strpbrk - search the first occurence in a string,
  * @s: string containing a set of bytes,
- * @:
- * Return: Always 0.
+ * @accept: contain the occurrence to find,
+ * Return: NULL.
  */
 
 char *_strpbrk(char *s, char *accept)
