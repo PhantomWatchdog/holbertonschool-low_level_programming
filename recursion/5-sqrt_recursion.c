@@ -1,34 +1,52 @@
 #include "main.h"
 
+int estimate_sqrt(int target, int root);
+int _sqrt_recursion(int n);
+
 /**
- * _sqrt_recursion - return the natural square root of number,
- * @n: number to check,
- * Return: n || i || -1.
+ * estimate_sqrt - Estimate natural square root of target.
+ * @target: The square root to find.
+ * @root: Root to be tested.
+ *
+ * Return: If target has natural square root - the square root.
+ *         If target have not natural square root - -1.
+ */
+int estimate_sqrt(int target, int root)
+{
+	if ((root * root) == target)
+	{
+		return (root);
+	}
+
+	if (root == target / 2)
+	{
+		return (-1);
+	}
+
+	return (estimate_sqrt(target, root + 1));
+}
+
+/**
+ * _sqrt_recursion - Returns natural square root of n.
+ * @n: The number to return the square root of.
+ *
+ * Return: If n has natural square root - the natural square root of n.
+ *         If n  have not natural square root - -1.
  */
 
 int _sqrt_recursion(int n)
 {
-	int i = 0;
-	int result;
+	int root = 0;
 
-/* if n is negative, n isn't natural root number */
 	if (n < 0)
-		return (n);
-
-/* if n is 0 || 1, square root is n */
-	if (n == 0 || n == 1)
-		return (n);
-
-	for (i = 1; i * i <= n; i++)
 	{
-		result = i * i;
-
-/* if i * i = n, the square root number of n is found */
-		if (result == n)
-		{
-			return (i);
-		}
+		return (-1);
 	}
 
-	return (-1);
+	if (n == 1)
+	{
+		return (1);
+	}
+
+	return (estimate_sqrt(n, root));
 }
