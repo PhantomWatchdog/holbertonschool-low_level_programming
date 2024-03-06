@@ -2,24 +2,24 @@
 
 /**
  * _pow_recursion - return the base value raised by power,
- * @base: base number to raise,
- * @power: exponent for calcul the raised value,
+ * @x: base number to raise,
+ * @y: exponent for calcul the raised value,
  *
  * Return: result.
  */
 
-int _pow_recursion(int base, int power)
+int _pow_recursion(int x, int y)
 {
 	int i;
 	int result = 1;
 
-	for (i = 0; i < power; i++)
+	for (i = 0; i < y; i++)
 	{
-		result *= base;
+		result *= x;
 
 	}
 
-	if (power < 0)
+	if (y < 0)
 	{
 		return (-1);
 	}
