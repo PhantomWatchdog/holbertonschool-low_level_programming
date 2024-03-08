@@ -19,16 +19,18 @@ int main(int argc, char *argv[])
 
 	for (num = 1; num < argc; num++)
 	{
-
+		for (digit = 0; argv[num][digit]; digit++)
+		{
 /*
  * Digit check if num is a digit with ascii table.
- * All num < 0 && > 9 is not considered as digit.
+ * All result < 0 && > 9 is not considered as digit.
  */
 
-		if (argv[num][digit] < '0' || argv[num][digit] > '9')
-		{
-			printf("Error\n");
-				return (1);
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
+					return (1);
+			}
 		}
 
 		sum += atoi(argv[num]);
