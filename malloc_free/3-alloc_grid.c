@@ -57,3 +57,8 @@ int **alloc_grid(int width, int height)
 
 	return (grid);
 }
+/**
+ * 9/10
+ * Probably Betty.
+ * How reduce code ? (max 40 lines).
+ */
