@@ -3,6 +3,73 @@
 #include <string.h>
 
 /**
+ * * _strlen - Check string length.
+ * @s: Parameter to s string.
+ * ptr: Pointer to the s value;
+ * Return: length.
+ */
+
+int _strlen(char *s)
+{
+	char *ptr = s;
+
+	while (*ptr != '\0')
+	{
+		ptr++;
+	}
+
+	return (ptr - s);
+
+}
+
+/**
+ * _strcpy - Copy src string to dest string.
+ * @dest: Receive the string containded by src;
+ * @src: Contain the string to copy,
+ * Return: dest.
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int index = 0;
+
+	while (src[index])
+	{
+		dest[index] = src[index];
+		index++;
+	}
+
+	if (dest[index])
+		dest[index] = '\0';
+
+	return (dest);
+}
+
+/**
+ * _strncat - Concatenation of two str.
+ * @dest: Destination,
+ * @src: Source,
+ * @n: Add n char at end of string,
+ * Return: dest.
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int dest_length = 0;
+	int index = 0;
+
+/* determine the dest lenght chain */
+	while (dest[index++])
+		dest_length++;
+
+/* concatenates the src chain to dest chain with max n added */
+	for (index = 0; src[index] && index < n; index++)
+		dest[dest_length++] = src[index];
+
+	return (dest);
+}
+
+/**
  * string_nconcat - Concatenate two strings.
  * @s1: First string.
  * @s2: Second string.
