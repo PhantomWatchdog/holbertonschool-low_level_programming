@@ -28,7 +28,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	alloc = malloc((length + 1) * sizeof(char));
 
 	/* Check if malloc succeed */
-	alloc = (alloc == NULL) ? NULL : alloc;
+	if (alloc == NULL)
+	{
+		return (NULL);
+	}
 
 	length = 0;
 	/* Copy s1 in alloc */
