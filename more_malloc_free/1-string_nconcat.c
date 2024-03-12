@@ -90,8 +90,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s2 = (s2 == NULL) ? "" : s2;
 
 	/* Calcul the s1 and s2 length */
-	length1 = strlen(s1);
-	length2 = strlen(s2);
+	length1 = _strlen(s1);
+	length2 = _strlen(s2);
 
 	/* If n >= length2, use s2 length */
 	n = (n >= length2) ? length2 : n;
@@ -105,10 +105,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	alloc = (alloc == NULL) ? NULL : alloc;
 
 	/* Copy s1 in alloc */
-	strcpy(alloc, s1);
+	_strcpy(alloc, s1);
 
 	/* Concatenates s2 first n bytes to alloc */
-	strncat(alloc, s2, n);
+	_strncat(alloc, s2, n);
 
 	/* End string with NULL */
 	alloc[total] = '\0';
