@@ -10,6 +10,11 @@
 
 void print_dog(struct dog *d)
 {
+	if (d == NULL)
+	{
+		return;
+	}
+
 	/* Check if alloc ram valid */
 	if (d != NULL)
 	{
