@@ -10,9 +10,14 @@
 
 void print_dog(struct dog *d)
 {
-	if (d->age < 0 || d == NULL)
+	if (d->age < 0)
 	{
 		printf("Age: (nil)\n");
+	}
+
+	else if (d == NULL)
+	{
+		return;
 	}
 
 	/* Check if alloc ram valid */
