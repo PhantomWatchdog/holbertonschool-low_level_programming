@@ -3,31 +3,38 @@
 
 /**
  * print_dog - Initialization of structure dog.
- * @d: Pointer to structure dog.
+ * @d: Pointer to structure elements dog.
  *
- * Return:.
+ * Return:
+ * If d-> X is empty, print (nil).
+ * If d-> X have a value, print it.
  */
 
 void print_dog(struct dog *d)
 {
+	if (d->name != NULL)
+	{
+		printf("Name: %s\n", d->name);
+	}
+	else
+	{
+		printf("Name: (nil\n");
+	}
 	if (d->age < 0)
 	{
 		printf("Age: (nil)\n");
 	}
-
-	/* Check if alloc ram valid */
-	if (d != NULL)
+	else
 	{
-		/* Print holders value */
-		printf("Name: %s\n", d->name);
 		printf("Age: %f\n", d->age);
+	}
+
+	if (d->owner != NULL)
+	{
 		printf("Owner: %s\n", d->owner);
 	}
 	else
 	{
-		printf("Name: (nil)\n");
-		printf("Age: (nil)\n");
 		printf("Owner: (nil)\n");
 	}
-
 }
