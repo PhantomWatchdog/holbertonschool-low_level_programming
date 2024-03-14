@@ -56,26 +56,18 @@ char *_strcpy(char *dest, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *rex;
-	int length1, length2;
-
-	length1 = _strlen(name);
-	length2 = _strlen(owner);
 
 	/* Check prerequirements */
 	if (name == NULL || age < 0 || owner == NULL)
-	{
 		return (NULL);
-	}
 
 	/* Alloc ram for a new structure dog and stock it in rex */
 	rex = malloc(sizeof(dog_t));
 	if (rex == NULL)
-	{
 		return (NULL);
-	}
 
 	/* Alloc ram for name string from dog struct */
-	rex->name = malloc(sizeof(char) * (length1 + 1));
+	rex->name = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (rex->name == NULL)
 	{
 		free(rex);
@@ -83,7 +75,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/* Alloc ram for owner from dog struct */
-	rex->owner = malloc(sizeof(char) * (length2 + 1));
+	rex->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (rex->owner == NULL)
 	{
 		free(rex->name);
