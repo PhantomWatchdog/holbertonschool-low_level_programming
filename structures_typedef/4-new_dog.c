@@ -2,22 +2,31 @@
 #include <stdlib.h>
 
 /**
- * _strlen - Calcul the string length.
- * @s: The string to check.
- * Return: Length.
+ * *_strdup - function that return a pointer with a copy of a string.
+ * @str: string copied
+ *
+ * Return: pointer to new string.
  */
 
-int _strlen(char *s)
+char *_strdup(char *str)
 {
-	char *ptr = s;
+	char *a;
+	unsigned int inter, size = 0;
 
-	while (*ptr != '\0')
-	{
-		ptr++;
-	}
+	if (str == NULL)
+		return (NULL);
 
-	return (ptr - s);
+	while (str[size] != '\0')
+		size++;
+	a = malloc((size + 1) * sizeof(char));
 
+	if (a == NULL)
+		return (NULL);
+
+	for (inter = 0; inter <= size; inter++)
+		a[inter] = str[inter];
+
+	return (a);
 }
 
 /**
@@ -57,35 +66,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *rex;
 
-	/* Check prerequirements */
-	if (name == NULL || age < 0 || owner == NULL)
-		return (NULL);
-
-	/* Alloc ram for a new structure dog and stock it in rex */
 	rex = malloc(sizeof(dog_t));
+
 	if (rex == NULL)
 		return (NULL);
 
-	/* Alloc ram for name string from dog struct */
-	rex->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if (rex->name == NULL)
+	rex->name = _strdup(name);
+	rex->owner = _strdup(owner);
+
+	if (rex->name == NULL || rex->owner == NULL)
 	{
+		free(rex->name);
 		free(rex->owner);
 		free(rex);
 		return (NULL);
 	}
 
-	/* Alloc ram for owner from dog struct */
-	rex->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if (rex->owner == NULL)
-	{
-		free(rex->name);
-		free(rex);
-		return (NULL);
-	}
-
-	rex->name = _strcpy(rex->name, name);
 	rex->age = age;
-	rex->owner = _strcpy(rex->owner, owner);
-	return (rex);
+		return (rex);
 }
