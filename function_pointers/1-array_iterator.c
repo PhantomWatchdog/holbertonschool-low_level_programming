@@ -1,7 +1,7 @@
-#include "functions_pointers.h"
+#include "function_pointers.h"
 
 /**
- * array_iterator - Print a name.
+ * array_iterator - Cast a function (action) to exe on array.
  * @array: Array of integers.
  * @size: Length of array.
  * @action: Function's pointer to an execution function.
@@ -23,6 +23,4 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 		action(*array);
 		array++;
 	}
-
-	_putchar('\n');
 }
