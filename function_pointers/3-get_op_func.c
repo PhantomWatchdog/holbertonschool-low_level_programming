@@ -1,5 +1,4 @@
 #include "3-calc.h"
-#include <stdlib.h>
 
 /**
  * get_op_func - Select the operator for calcul.
@@ -21,8 +20,12 @@ int (*get_op_func(char *s))(int, int)
 
 	int index = 0;
 
-	while (ops[index].op != NULL && *(ops[index].op) != *s)
+	while (ops[index].op)
+	{
+		if (strcmp(ops[index].op, s) == 0)
+			return (ops[index].f);
+		
 		index++;
-
-	return (ops[index].f);
+	}
+	return (NULL);
 }
