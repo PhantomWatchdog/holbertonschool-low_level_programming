@@ -21,8 +21,13 @@ int (*get_op_func(char *s))(int, int)
 
 	int index = 0;
 
-	while (ops[index].op && *ops[index].op != *s)
+	while (ops[index].op)
 		index++;
+
+	if (*ops[index].op != *s)
+	{
+		return (NULL);
+	}
 
 	return (ops[index].f);
 }
