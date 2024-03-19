@@ -20,11 +20,8 @@ int (*get_op_func(char *s))(int, int)
 
 	int index = 0;
 
-	while (ops[index].op && *ops[index].op != *s)
+	while (ops[index].op != NULL && *ops[index].op != *s)
 		index++;
-
-	if (ops[index].op == NULL)
-		return (NULL);
 
 	return (ops[index].f);
 }
