@@ -3,45 +3,35 @@
 /**
  * print_char - Prints a char.
  *@args: Arguments to prints.
- *Return: letter.
+ *Return: arg.
  */
 
 void print_char(va_list args)
 {
-	/* Stock the char */
-	char letter;
 
-	/* Extract the char from list */
-	letter = va_arg(args, int);
-	printf("%c", letter);
+	printf("%c", va_arg(args, int));
 }
 
 /**
  * print_int - Prints a integer.
  *@args: Arguments to prints.
- *Return: num.
+ *Return: arg.
  */
 
 void print_int(va_list args)
 {
-	int num;
-
-	num = va_arg(args, int);
-	printf("%d", num);
+	printf("%d", va_arg(args, int));
 }
 
 /**
  * print_float - Prints a float.
  *@args: Arguments to prints.
- *Return: num.
+ *Return: arg.
  */
 
 void print_float(va_list args)
 {
-	float num;
-
-	num = va_arg(args, double);
-	printf("%f", num);
+	printf("%f", va_arg(args, double));
 }
 
 /**
