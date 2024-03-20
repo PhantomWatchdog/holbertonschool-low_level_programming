@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
 
 /**
  * sum_them_all - Print the sum of all args.
@@ -13,7 +12,7 @@ int sum_them_all(const unsigned int n, ...)
 {
 	va_list args;
 	unsigned int sum = 0, index;
-	
+
 	/* Initialize the args list */
 	va_start(args, n);
 
@@ -27,7 +26,7 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		sum += va_arg(args, int);
 	}
-	
+
 	/* End of use for list args */
 	va_end(args);
 
