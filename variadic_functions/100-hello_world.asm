@@ -14,4 +14,4 @@ main:		;Start of main function
         int	0x80	;System call of sys_exit for end program
 
 message:		;Start of data section
-        db      "Hello, Holberton", 10	;db define n bytes in ram with newline (10)
+        db      "Hello, World", 10	;db define n bytes in ram with newline (10)
