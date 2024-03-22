@@ -11,4 +11,4 @@ main:
         xor     rbx, rbx
         int	0x80
 message:
-        db      "Hello, Holberton", 10
+        db      "Hello, World", 10
