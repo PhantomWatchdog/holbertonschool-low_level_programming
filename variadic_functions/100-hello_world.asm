@@ -1,18 +1,17 @@
-section .text   ;Section containing the executable part of the program
-   global main  ;Declaration of main function as global symbol
+global  main	;Declaration of main function as global symbol
+section .text	;Section containing the executable part of the program
 
 main:		;Start of main function
-   mov edx,len  ;Load the msg length in edx register
-   mov ecx,msg  ;Load the msg adress in ecx register
-   mov ebx,1	;Load the stdout in ebx register
-   mov eax,4	;Load the numero for system call (sys_write) in eax register
-   int 0x80	;System call of sys_write for write msg on standard output
 
-   mov eax,0	;Load the numero for system call (sys_exit) in eax register
-   int 0x80	;System call sys_exit for end program
+        mov     rax, 4	;Load the numero system call for sys_write in rax register
+        mov     rbx, 1	;Load the numero of file in rbx register (stdout)
+        mov     rcx, message	;Load & of messagein rcx register
+        mov     rdx, 17	;Load the length of message in rdx register
+        int	0x80	;System call of sys_write for write msg on standard output
 
-section .data	;Section containing the data used by program
+        mov     rax, 1	;Load the numero system call for sys_exit in rax register
+        xor     rbx, rbx	;Make XOR op in rbx register
+        int	0x80	;System call of sys_exit for end program
 
-   msg: db 'Hello, Holberton', 0xa ;Define the msg with newline ('OxA') in ram
-   len: equ $ - msg		   ;Sub & of label in creation and & of msg label
-				   ;Calcul the bytes length between the two &
+message:		;Start of data section
+        db      "Hello, Holberton", 10	;db define n bytes in ram with newline (10)
