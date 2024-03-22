@@ -4,7 +4,7 @@ main:
         mov     rax, 4
         mov     rbx, 1
         mov     rcx, message
-        mov     rdx, 17
+        mov     rdx, 13
         int	0x80
 
         mov     rax, 1
