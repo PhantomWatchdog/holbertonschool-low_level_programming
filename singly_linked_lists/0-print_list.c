@@ -10,23 +10,23 @@
 
 size_t print_list(const list_t *h)
 {
-	size_t nodes = 0;
+	size_t node_count = 0;
+	const list_t *current;
 
-	while (h)
+	/* Move foward in list until head != NULL */
+	for (current = h; current != NULL; current = current->next)
 	{
-		if (h->str == NULL)
+		if (current->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
 
 		else
 		{
-			printf("[%d] %s\n", h->len, h->str);
+			printf("[%d] %s\n", current->len, current->str);
 		}
 
-		nodes++;
-		h = h->next;
+		node_count++;
 	}
-
-	return (nodes);
+	return (node_count);
 }
